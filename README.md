@@ -2,7 +2,9 @@
 
 ## Requisitos previos
 Previamente debe tener instalado chocolatey "https://chocolatey.org/install#individual"
+
 Como administrado en powershell debe ejecutar este comando "Set-ExecutionPolicy Bypass -Scope Process"
+
 Y ejecutar este comando "Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))"
 
 Para la instalación de k6 debe ejecutar como administrador en powershell
@@ -12,6 +14,10 @@ Para la instalación de k6 debe ejecutar como administrador en powershell
 k6 --version
 
 ## Ejecución de la prueba
+Ingresar a la carpeta
+
+cd challenge-performance-malc
+
 Dentro de la carpeta challenge-performance-malc, ejecutar:
 * k6 run test.js
 
