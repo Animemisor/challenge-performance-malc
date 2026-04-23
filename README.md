@@ -31,18 +31,54 @@ Ejecuta dos escenarios de carga:
 
 Cada request envía un título único (requisito del endpoint)
 
-Al finalizar, genera un reporte en consola con resultados y conclusión
+## Reportes
+Al finalizar la ejecución, se generarán los siguientes archivos en la carpeta output/:
+
+Archivo -> Descripción
+
+reporte-ejecutivo.txt -> Reporte en texto plano para personas no técnicas
+
+reporte-tecnico.html -> Reporte visual con gráficos y métricas detalladas
+
+datos-{timestamp}.json -> Datos crudos en formato JSON
 
 ## Interpretación de resultados
 El reporte mostrará los siguientes indicadores:
-* Tiempo promedio: Tiempo que tardó cada request en promedio
-* p95: El 95% de las requests fueron más rápidas que este valor
-* Tasa de error: Porcentaje de requests que fallaron
-* Estado: ✅ CUMPLE o ❌ NO CUMPLE
+
+Indicador ->	Qué significa
+
+Tiempo promedio ->	Tiempo promedio que tardó cada petición en completarse
+
+Tiempo máximo ->La petición más lenta registrada
+
+Tiempo p95 -> El 95% de las peticiones fueron más rápidas que este valor
+
+Tasa de error -> Porcentaje de peticiones que fallaron
 
 ## Criterios de aprobación
-* 50 TPS: 95% de requests < 2000 ms, error < 5%
-* 100 TPS: 95% de requests < 3000 ms, error < 5%
+Escenario	- Tiempo p95 - Tasa de error
 
-## Resultados detallados
-Además del reporte en consola, se genera un archivo JSON en la carpeta: "output/" con todas las métricas.
+50 TPS	< 2000 ms (2 segundos)	< 5%
+
+100 TPS	< 3000 ms (3 segundos)	< 5%
+
+# Estados posibles
+
+Estado -> Significado
+
+✅ CUMPLE	El sistema está dentro de los límites aceptables
+
+⚠️ OPTIMIZACIÓN REQUERIDA -> Funciona bien en condiciones normales, pero falla en alta demanda
+
+❌ NO CUMPLE -> El sistema presenta problemas incluso en condiciones normales
+
+
+# Convertir el reporte técnico a PDF
+
+Abra el archivo output/reporte-tecnico.html en su navegador
+
+Presione Ctrl + P (Windows) / Cmd + P (Mac)
+
+Seleccione "Guardar como PDF"
+
+Guarde el archivo
