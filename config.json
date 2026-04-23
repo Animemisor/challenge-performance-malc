@@ -1,0 +1,36 @@
+{
+  "baseUrl": "https://dummyjson.com",
+  "credentials": {
+    "username": "emilys",
+    "password": "emilyspass"
+  },
+  "scenarios": [
+    {
+      "name": "50_TPS",
+      "tps": 50,
+      "duration": "1m",
+      "preAllocatedVUs": 20,
+      "maxVUs": 50
+    },
+    {
+      "name": "100_TPS",
+      "tps": 100,
+      "duration": "1m",
+      "preAllocatedVUs": 40,
+      "maxVUs": 100
+    }
+  ],
+  "thresholds": {
+    "50_TPS": {
+      "p95": 5000,
+      "errorRate": 0.50
+    },
+    "100_TPS": {
+      "p95": 5000,
+      "errorRate": 0.50
+    }
+  },
+  "product": {
+    "defaultPrice": 19.99
+  }
+}
