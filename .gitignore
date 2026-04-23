@@ -1,7 +1,3 @@
-*.html
-*.json
-!config.json
-*.log
-*.tmp
+!output/.gitkeep
 .DS_Store
 Thumbs.db
